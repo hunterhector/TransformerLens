@@ -29,6 +29,8 @@ OFFICIAL_MODEL_NAMES = [
     "gpt2-large",
     "gpt2-xl",
     "distilgpt2",
+    "LLM360/amber",
+    "LLM360/K2",
     "facebook/opt-125m",
     "facebook/opt-1.3b",
     "facebook/opt-2.7b",
@@ -770,7 +772,7 @@ def convert_hf_model_config(model_name: str, **kwargs):
             "final_rms": True,
             "gated_mlp": True,
         }
-    elif "llama-65b" in official_model_name:
+    elif "llama-65b" in official_model_name or "K2" in official_model_name:
         cfg_dict = {
             "d_model": 8192,
             "d_head": 8192 // 64,
